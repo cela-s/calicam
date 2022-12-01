@@ -194,8 +194,8 @@ void DisparityImage(const cv::Mat& recl, const cv::Mat& recr, cv::Mat& disp) {
     sgbm->compute(recl, recr, disp16s);
   } else {
     cv::Mat grayl, grayr;
-    cv::cvtColor(recl, grayl, CV_BGR2GRAY);
-    cv::cvtColor(recr, grayr, CV_BGR2GRAY);
+    cv::cvtColor(recl, grayl, cv::BGR2GRAY);
+    cv::cvtColor(recr, grayr, cv::BGR2GRAY);
 
     cv::Ptr<cv::StereoBM> sbm = cv::StereoBM::create(N, W);
     sbm->setPreFilterCap(31);
@@ -255,9 +255,9 @@ int main(int argc, char** argv) {
       exit(-1);
     }
 
-    vcapture.set(CV_CAP_PROP_FRAME_WIDTH,  cap_cols);
-    vcapture.set(CV_CAP_PROP_FRAME_HEIGHT, cap_rows);
-    vcapture.set(CV_CAP_PROP_FPS, 30);
+    vcapture.set(cv::CAP_PROP_FRAME_WIDTH,  cap_cols);
+    vcapture.set(cv::CAP_PROP_FRAME_HEIGHT, cap_rows);
+    vcapture.set(cv::CAP_PROP_FPS, 30);
   } else {
     raw_img = cv::imread("../dasl_wood_shop.jpg", cv::IMREAD_COLOR);
   }
