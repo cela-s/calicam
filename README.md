@@ -1,3 +1,7 @@
+# Fork Modification
+
+Made it compatible with OpenCV 4.2 so that it may be used on Ubuntu 20.04.
+
 # CaliCam: Calibrated Fisheye Stereo & Mono Camera
 
 <p align="center">
